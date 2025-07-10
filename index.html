@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DayDrill Scheduler</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">DayDrill</h1>
+            <div class="settings">⚙️ Settings</div>
+        </header>
+
+        <main>
+            <div class="tasks-card">
+                <h2>Today's Tasks</h2>
+
+                <div class="tasks-scroll-area" id="tasksScrollArea">
+                    <div class="task">
+                        <input type="checkbox" />
+                        <label>Exercise <span>30 min</span></label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" />
+                        <label>Breakfast <span>15 min</span></label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" />
+                        <label>Study <span>2 hours</span></label>
+                    </div>
+                </div>
+
+                <div class="new-task">
+                    <input type="text" id="taskInput" placeholder="Add a new task" />
+                    <button id="addTaskButton">➕</button>
+                </div>
+            </div>
+
+
+            <div class="timer-quote-card">
+                <div class="timer-card">
+                    <div class="timerFunction">
+                        <h2 id="clock">Clock</h2>
+                        <h2 id="timer">Timer</h2>
+                    </div>
+                    <div class="timer">
+                        <span id="clockHour">00</span>:<span id="clockMin">00</span>:<span id="clockSec">00</span>
+                    </div>
+                    <div class="labels">Hour | Min | Sec </div>
+                    <h2 id="timerStartBtnm">Start</h2>
+                </div>
+
+                <div class="quote-card">
+                    <h2>Quote of the Day</h2>
+                    <blockquote>
+                        "The only way to do great work is to love what you do."
+                    </blockquote>
+                    <p>- Steve Jobs</p>
+                </div>
+            </div>
+            <section class="dashboard-card">
+                <h2>Performance Report</h2>
+                <div class="report-grid">
+                    <div class="weekly">
+                        <h3>Weekly Progress</h3>
+                        <div class="chart-placeholder">Chart will be here</div>
+                        <div class="days">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+                    <div class="completion">
+                        <h3>Task Completion</h3>
+                        <p><strong>85%</strong><br />Done</p>
+                    </div>
+                </div>
+    </div>
+    </section>
+
+    </main>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
