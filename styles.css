@@ -5,6 +5,10 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 body {
   background: linear-gradient(to bottom right, #344e89, #41729f, #e1f1ff);
   padding: 20px;
@@ -18,8 +22,7 @@ body {
 }
 
 .logo {
-  font-family: BigFlorida, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: black;
 }
 
@@ -64,7 +67,6 @@ main {
 .tasks-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 400px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.4);
@@ -72,10 +74,15 @@ main {
 }
 
 .tasks-scroll-area {
-  flex: 1;
+  flex: 2;
   overflow-y: auto;
-  margin-bottom: 10px;
-  /* space before the input */
+}
+
+.tasks-scroll-area {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: none;
 }
 
 .timer-card {
@@ -115,10 +122,6 @@ main {
 
 }
 
-.task input {
-  margin: 10px;
-
-}
 
 .task label {
   display: flex;
@@ -127,20 +130,27 @@ main {
 }
 
 
+
 .new-task {
   display: flex;
-  margin-top: auto;
-  /* pushes it to the bottom */
-  gap: 10px;
+  gap: 8px;
+}
+
+#taskInput {
+  width: 80%;
+}
+
+#taskTimeInput {
+  width: 10%;
 }
 
 .new-task input {
-  flex: 1;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 
 .new-task button {
   padding: 8px 12px;
@@ -154,6 +164,7 @@ main {
   border: none;
   outline: none;
 }
+
 
 .timer-card {
   text-align: center;

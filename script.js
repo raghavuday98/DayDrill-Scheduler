@@ -9,7 +9,7 @@ let intervalId = null;
 
 // CLOCK MODE
 clock.addEventListener('click', () => {
-    clearInterval(intervalId); 
+    clearInterval(intervalId);
 
     function format(val) {
         return val.toString().padStart(2, "0");
@@ -25,7 +25,7 @@ clock.addEventListener('click', () => {
 
 // TIMER MODE
 timer.addEventListener('click', () => {
-    clearInterval(intervalId); 
+    clearInterval(intervalId);
     timerStartBtn.style.display = "block";
     clockHour.innerText = "00";
     clockMin.innerText = "00";
@@ -34,7 +34,7 @@ timer.addEventListener('click', () => {
 
 // START TIMER
 timerStartBtn.addEventListener('click', () => {
-    clearInterval(intervalId); 
+    clearInterval(intervalId);
 
     let hour = 0,
         min = 0,
@@ -57,12 +57,9 @@ timerStartBtn.addEventListener('click', () => {
     }, 1000);
 });
 
-
-// Tasks js
 const taskContainer = document.querySelector(".tasks-card");
 const taskInp = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTaskButton");
-
 const taskScrollArea = document.getElementById("tasksScrollArea");
 
 addTaskButton.addEventListener('click', () => {
@@ -78,4 +75,8 @@ addTaskButton.addEventListener('click', () => {
 
     taskScrollArea.appendChild(newTask);
     taskInp.value = "";
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  // all your JavaScript here
 });
