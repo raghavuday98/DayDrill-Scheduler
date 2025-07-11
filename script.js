@@ -148,3 +148,84 @@ taskScrollArea.addEventListener("click", (event) => {
         }, 250);
     }
 });
+
+//Cowntdown Timer
+const countdownHour = document.getElementById("countdownHour");
+const countdownMin = document.getElementById("countdownMin");
+const countdownSec = document.getElementById("countdownSec");
+const countdownName = document.querySelector(".countdownName");
+const CountdownStartBtn = document.querySelector(".CountdownStartBtn");
+const CountdownPauseBtn = document.querySelector(".CountdownPauseBtn");
+const CountdownDisplay = document.querySelector(".time-display");
+
+let countdownInterval;
+let countdownHours = 0;
+let countdownMinutes = 0;
+let countdownSeconds = 0;
+
+taskScrollArea.addEventListener('click', (e) => {
+    const task = e.target.closest('.task');
+    if (!task) return;
+
+    const nameEl = task.querySelector('.task-name');
+    const timeEl = task.querySelector('.task-time');
+
+    if (!nameEl || !timeEl) return;
+
+    const name = nameEl.textContent;
+    const timeText = timeEl.textContent.toLowerCase();
+
+    const hourMatch = timeText.match(/(\d+)\s*hour/);
+    const minMatch = timeText.match(/(\d+)\s*min/);
+
+    countdownHours = hourMatch ? parseInt(hourMatch[1]) : 0;
+    countdownMinutes = minMatch ? parseInt(minMatch[1]) : 0;
+    countdownSeconds = 0;
+
+    countdownName.textContent = `${name} Countdown`;
+    countdownHour.textContent = countdownHours.toString().padStart(2, "0");
+    countdownMin.textContent = countdownMinutes.toString().padStart(2, "0");
+    countdownSec.textContent = "00";
+    CountdownStartBtn.style.display = "block";
+});
+
+// Countdown Start
+CountdownStartBtn.addEventListener("click", () => {
+    clearInterval(countdownInterval); // Reset existing interval
+    CountdownPauseBtn.style.display="block";
+    CountdownStartBtn.style.display="none";
+
+    countdownInterval = setInterval(() => {
+        if (countdownHours === 0 && countdownMinutes === 0 && countdownSeconds === 0) {
+            clearInterval(countdownInterval);
+            alert("Good Job!");
+            return;
+        }
+
+        if (countdownSeconds === 0) {
+            if (countdownMinutes > 0) {
+                countdownMinutes--;
+                countdownSeconds = 59;
+            } else if (countdownHours > 0) {
+                countdownHours--;
+                countdownMinutes = 59;
+                countdownSeconds = 59;
+            }
+        } else {
+            countdownSeconds--;
+        }
+
+        countdownHour.textContent = countdownHours.toString().padStart(2, "0");
+        countdownMin.textContent = countdownMinutes.toString().padStart(2, "0");
+        countdownSec.textContent = countdownSeconds.toString().padStart(2, "0");
+
+    }, 1000);
+});
+
+//Countdown Pause
+CountdownPauseBtn.addEventListener('click', () => {
+    clearInterval(countdownInterval); // just stops the ticking
+    CountdownStartBtn.innerHTML="Resume";
+    CountdownStartBtn.style.display = "block"; // show Start again
+    CountdownPauseBtn.style.display = "none";  // hide Pause
+});
