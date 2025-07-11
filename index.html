@@ -20,36 +20,61 @@
                 <h2>Today's Tasks</h2>
 
                 <div class="tasks-scroll-area" id="tasksScrollArea">
+                    <!--Task -->
                     <div class="task">
-                        <input type="checkbox" />
-                        <label>Exercise <span>30 min</span></label>
-                    </div>
-                    <div class="task">
-                        <input type="checkbox" />
-                        <label>Breakfast <span>15 min</span></label>
-                    </div>
-                    <div class="task">
-                        <input type="checkbox" />
-                        <label>Study <span>3 hours</span></label>
-                    </div>
-                    <div class="task">
-                        <input type="checkbox" />
-                        <label>Lunch<span>30 min</span></label>
-                    </div>
-                    <div class="task">
-                        <input type="checkbox" />
-                        <label>Game<span>1 hours</span></label>
-                    </div>
-                        <div class="task">
+                        <div class="task-left">
                             <input type="checkbox" />
-                            <label>Coding Practice <span>2 hours</span></label>
+                            <span class="task-name">Exercise</span>
                         </div>
+                        <div class="task-right">
+                            <span class="task-time">30 min</span>
+                            <img src="Images/remove.png" alt="Remove" class="task-remove-btn" />
+                        </div>
+                    </div>
+                    <!--Task -->
+                    <div class="task">
+                        <div class="task-left">
+                            <input type="checkbox" />
+                            <span class="task-name">Study</span>
+                        </div>
+                        <div class="task-right">
+                            <span class="task-time">2 Hour 30 Min</span>
+                            <img src="Images/remove.png" alt="Remove" class="task-remove-btn" />
+                        </div>
+                    </div>
+                    <!--Task -->
+                    <div class="task">
+                        <div class="task-left">
+                            <input type="checkbox" />
+                            <span class="task-name">Break</span>
+                        </div>
+                        <div class="task-right">
+                            <span class="task-time">30 min</span>
+                            <img src="Images/remove.png" alt="Remove" class="task-remove-btn" />
+                        </div>
+                    </div>
+                    <!--Task -->
+                    <div class="task">
+                        <div class="task-left">
+                            <input type="checkbox" />
+                            <span class="task-name">Coding Practice</span>
+                        </div>
+                        <div class="task-right">
+                            <span class="task-time">4 Hours</span>
+                            <img src="Images/remove.png" alt="Remove" class="task-remove-btn" />
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="new-task">
                     <input type="text" id="taskInput" placeholder="Add a new task" />
-                    <input type="time" id="taskTimeInput">
+                    <input type="time" id="taskTimeInput" value="00:00">
                     <button id="addTaskButton">➕</button>
+                </div>
+                <div id="popupAlert" class="popup-alert">
+                    <p>Please enter both task name and time!</p>
+                    <button id="closePopup">Okay</button>
                 </div>
             </div>
 
@@ -60,11 +85,12 @@
                         <h2 id="clock">Clock</h2>
                         <h2 id="timer">Timer</h2>
                     </div>
-                    <div class="timer">
+                    <div class="time">
                         <span id="clockHour">00</span>:<span id="clockMin">00</span>:<span id="clockSec">00</span>
                     </div>
                     <div class="labels">Hour | Min | Sec </div>
-                    <h2 id="timerStartBtn">Start</h2>
+                    <h2 id="timerStartBtn" style="display: none;">Start</h2>
+                    <h2 id="timerStopBtn" style="display: none;">Stop</h2>
                 </div>
 
                 <div class="quote-card">
@@ -74,7 +100,21 @@
                     </blockquote>
                     <p>- Steve Jobs</p>
                 </div>
+                <div class="taskTimer">
+                    <h2>Task Countdown Timer</h2>
+                    <div class="circular-timer">
+                        <svg class="progress-ring" width="160" height="160">
+                            <circle class="bg" r="70" cx="80" cy="80"></circle>
+                            <circle class="progress" r="70" cx="80" cy="80"></circle>
+                        </svg>
+                        <div class="time-display" id="circularClock"><span id="countdownkHour">00</span>:<span id="countdownkMin">00</span>:<span id="countdownSec">00</span></div>
+                    </div>
+                    <h2 class="CountdownStartBtn" style="color: green; display: none;">Start</h2>
+                    <h2 class="CountdownPauseBtn" style="color: green; display: none;">Pause</h2>
+                </div>
+
             </div>
+
             <section class="dashboard-card">
                 <h2>Performance Report</h2>
                 <div class="report-grid">
