@@ -76,6 +76,12 @@
                     <p>Please enter both task name and time!</p>
                     <button id="closePopup">Okay</button>
                 </div>
+
+                <div id="switchTaskPopup" style="display:none;" class="popup-confirm">
+                    <p id="popupText"></p>
+                    <button id="confirmSwitch">Yes, switch</button>
+                    <button id="cancelSwitch">Cancel</button>
+                </div>
             </div>
 
 
@@ -94,11 +100,7 @@
                 </div>
 
                 <div class="quote-card">
-                    <h2>Quote of the Day</h2>
-                    <blockquote>
-                        "The only way to do great work is to love what you do."
-                    </blockquote>
-                    <p>- Steve Jobs</p>
+
                 </div>
                 <div class="taskTimer">
                     <h2 class="countdownName">Task Countdown</h2>
@@ -121,14 +123,17 @@
                 <div class="report-grid">
                     <div class="weekly">
                         <h3>Weekly Progress</h3>
-                        <div class="chart-placeholder">Chart will be here</div>
-                        <div class="days">
-                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
-                        </div>
+                        <div class="chart-placeholder" style="background-image: url(Images/progressbar.png); background-size: contain;"></div>
                     </div>
                     <div class="completion">
-                        <h3>Task Completion</h3>
-                        <p><strong>00%</strong><br />Done</p>
+                        <h2>Task Completion</h2>
+                        <div class="progress-container">
+                            <svg class="progress-ring" width="140" height="140">
+                                <circle class="progress-bg" r="60" cx="70" cy="70" />
+                                <circle class="progress-value" r="60" cx="70" cy="70" />
+                            </svg>
+                            <div class="progress-percent" id="progressPercent">0%</div>
+                        </div>
                     </div>
                 </div>
     </div>

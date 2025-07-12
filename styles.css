@@ -271,6 +271,10 @@ main {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.quote-card h2 {
+  margin-top: -10px;
+}
+
 .quote-card blockquote {
   font-style: italic;
   margin-top: 10px;
@@ -280,7 +284,7 @@ main {
 .quote-card p {
   text-align: right;
   font-weight: bold;
-  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 /*Task  Timer */
@@ -293,7 +297,7 @@ main {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 }
 
 .circular-timer {
@@ -348,7 +352,8 @@ main {
 }
 
 .dashboard-card h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  margin-top: -10px;
   color: #2f3542;
 }
 
@@ -381,7 +386,7 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 8px;
-  height: 100px;
+  height: 150px;
   line-height: 100px;
   margin-bottom: 10px;
   color: #555;
@@ -421,4 +426,42 @@ main {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/*Percent*/
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.progress-bg {
+  stroke: #e0e0e0;
+}
+
+.progress-value {
+  stroke: #4caf50;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.progress-percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 20px;
 }
