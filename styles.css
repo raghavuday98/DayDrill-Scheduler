@@ -546,15 +546,15 @@ main {
   }
 
   #taskInput {
-    width: 65%;
+    width: 55%;
   }
 
   #taskTimeInput {
-    width: 20%;
+    width: 32%;
   }
 
   #addTaskButton {
-    width: 11%;
+    width: 10%;
   }
 
   .weekly {
