@@ -469,9 +469,10 @@ main {
 /* Responsive */
 /* 📱 Mobile Responsive Styles */
 @media (max-width: 768px) {
-  html{
+  html {
     overflow-y: auto;
   }
+
   main {
     display: flex;
     flex-direction: column;
@@ -503,6 +504,7 @@ main {
 
   .tasks-scroll-area {
     max-height: 250px;
+    padding-top: 10px;
   }
 
   .quote-card {
@@ -538,23 +540,49 @@ main {
     flex-direction: column;
   }
 
-  .new-task{
+  .new-task {
     display: flex;
     flex-direction: row;
   }
-  
-  #taskInput{
-    width: 70%;
+
+  #taskInput {
+    width: 65%;
   }
 
-  #taskTimeInput{
-    width: 15%;
+  #taskTimeInput {
+    width: 20%;
   }
-  #addTaskButton{
+
+  #addTaskButton {
     width: 11%;
   }
 
-  .weekly{
+  .weekly {
     display: none;
+  }
+
+  .progress-container {
+    height: 80%;
+    width: 80%;
+  }
+
+  .timer-quote-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 👇 Reorder the elements */
+  .taskTimer {
+    order: 1;
+    margin-top: -15px;
+  }
+
+  .quote-card {
+    order: 2;
+    margin-top: -10px;
+  }
+
+  .timer-card {
+    order: 3;
   }
 }
