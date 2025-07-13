@@ -465,3 +465,96 @@ main {
   font-weight: bold;
   font-size: 20px;
 }
+
+/* Responsive */
+/* 📱 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  html{
+    overflow-y: auto;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .settings {
+    font-size: 18px;
+  }
+
+  .tasks-card,
+  .timer-card,
+  .taskTimer,
+  .quote-card,
+  .dashboard-card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .tasks-scroll-area {
+    max-height: 250px;
+  }
+
+  .quote-card {
+    width: 100%;
+  }
+
+  .taskTimer {
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .dashboard-card {
+    top: 0;
+    width: 100%;
+  }
+
+  .report-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .progress-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .time span {
+    font-size: 36px;
+  }
+
+  .new-task {
+    flex-direction: column;
+  }
+
+  .new-task{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #taskInput{
+    width: 70%;
+  }
+
+  #taskTimeInput{
+    width: 15%;
+  }
+  #addTaskButton{
+    width: 11%;
+  }
+
+  .weekly{
+    display: none;
+  }
+}

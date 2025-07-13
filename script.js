@@ -24,6 +24,7 @@ function startClock() {
     clock.classList.add('active');
     timer.classList.remove('active');
     timerStopBtn.style.display = "none";
+    timerStartBtn.style.display ="none";
 
     function format(val) {
         return val.toString().padStart(2, "0");
