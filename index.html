@@ -69,7 +69,7 @@
 
                 <div class="new-task">
                     <input type="text" id="taskInput" placeholder="Add a new task" />
-                    <input type="time" id="taskTimeInput" value="00:00">
+                    <input type="time" id="taskTimeInput" value="00:00" step="60">
                     <button id="addTaskButton">➕</button>
                 </div>
                 <div id="popupAlert" class="popup-alert">
@@ -123,7 +123,8 @@
                 <div class="report-grid">
                     <div class="weekly">
                         <h3>Weekly Progress</h3>
-                        <div class="chart-placeholder" style="background-image: url(Images/progressbar.png); background-size: contain;"></div>
+                        <div class="chart-placeholder"
+                            style="background-image: url(Images/progressbar.png); background-size: contain;"></div>
                     </div>
                     <div class="completion">
                         <h2>Task Completion</h2>
